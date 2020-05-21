@@ -52,15 +52,21 @@ mod test {
     }
 
     #[test]
-    fn test_quote() {
+    fn test_surprise_at_intruder_quote_is_not_relevant() {
         let quote =
             Quote::SurpriseAtAnIntruder("Who are you? How did you get into my house?".to_string());
 
         let conversation = build_conversation_with_quote(quote);
-        assert_eq!(
-            true,
-            conversation.everything_is_relevant_and_normal(),
-            "something was weird"
-        )
+        assert_eq!(false, conversation.everything_is_relevant_and_normal());
+    }
+
+    #[test]
+    fn test_algorithms_quote_is_relevant() {
+        let quote = Quote::PertinentToAlgorithms(
+            "Sometimes you should use zero-based indices; sometimes, use one-based.".to_string(),
+        );
+
+        let conversation = build_conversation_with_quote(quote);
+        assert_eq!(false, conversation.everything_is_relevant_and_normal());
     }
 }
