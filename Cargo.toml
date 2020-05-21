@@ -1,0 +1,8 @@
+[package]
+name = "joke"
+version = "0.1.0"
+authors = ["Robin James Kerrison <robinjames.kerrison@red-badger.com>"]
+edition = "2018"
+
+[dev-dependencies]
+pretty_assertions = "0.6.1"
