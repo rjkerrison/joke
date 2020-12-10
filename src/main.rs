@@ -67,6 +67,6 @@ mod test {
         );
 
         let conversation = build_conversation_with_quote(quote);
-        assert_eq!(false, conversation.everything_is_relevant_and_normal());
+        assert_eq!(true, conversation.everything_is_relevant_and_normal());
     }
 }
